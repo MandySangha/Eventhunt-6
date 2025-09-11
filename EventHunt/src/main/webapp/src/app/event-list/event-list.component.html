@@ -1,0 +1,72 @@
+<div class="event-page-container">
+  <!-- ✅ Heading -->
+  <div class="header">
+    <h1>Discover Events Near You</h1>
+    <p>Find exciting events happening nearby</p>
+  </div>
+
+  <!-- ✅ Filters -->
+  <div class="filters">
+    <label>Category:
+      <select [(ngModel)]="selectedCategory">
+        <option value="">All</option>
+        <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+      </select>
+    </label>
+
+    <label>From Date:
+      <input type="date" [(ngModel)]="fromDate">
+    </label>
+
+    <label>To Date:
+      <input type="date" [(ngModel)]="toDate">
+    </label>
+
+    <label>From Time:
+      <input type="time" [(ngModel)]="fromTime">
+    </label>
+
+    <label>To Time:
+      <input type="time" [(ngModel)]="toTime">
+    </label>
+
+    <label>Min Price:
+      <input type="number" [(ngModel)]="minPrice" min="0" step="0.01">
+    </label>
+
+    <label>Max Price:
+      <input type="number" [(ngModel)]="maxPrice" min="0" step="0.01">
+    </label>
+
+    <label>Sort:
+      <select [(ngModel)]="selectedSort">
+        <option value="">None</option>
+        <option value="date">Date</option>
+        <option value="priceLowHigh">Price: Low to High</option>
+        <option value="priceHighLow">Price: High to Low</option>
+      </select>
+    </label>
+
+    <button (click)="applyFilters()">Apply Filters</button>
+    <button (click)="resetFilters()" class="reset-btn">Reset</button>
+  </div>
+
+  <!-- ✅ Events Grid -->
+  <div class="event-section">
+    <h2>Upcoming Events</h2>
+    <div class="event-grid">
+      <div class="event-card" *ngFor="let event of filteredEvents"> 
+        <h3>{{ event.eventName }}</h3>
+        <p><span class="label">Date:</span> {{ event.date | date }}</p>
+        <p><span class="label">Time:</span> {{ event.time }}</p>
+        <p><span class="label">Location:</span> {{ event.eventAddress?.city }}, {{ event.eventAddress?.province }}</p>
+        <p><span class="label">Category:</span> {{ event.category }}</p>
+        <p><span class="label">Organizer:</span> {{ event.organizer?.orgName }}</p>
+        <p><span class="label">Price:</span> ${{ event.ticketPrice }}</p>
+       <button [routerLink]="['/event-details', event.eventID]">View Details</button>
+       
+        
+      </div>
+    </div>
+  </div>
+</div>

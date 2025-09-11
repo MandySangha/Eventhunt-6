@@ -1,0 +1,71 @@
+.homepage-container {
+  padding: 2rem;
+}
+
+.welcome-section {
+  background: linear-gradient(90deg, #a8ff78, #78ffd6);
+  padding: 3rem 1rem;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #1b1b1b;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.welcome-section h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1a3c34;
+}
+
+.welcome-section p {
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  color: #2c3e50;
+}
+
+.event-preview-section h2 {
+  font-size: 1.9rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #1b1b1b;
+}
+
+.event-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.mini-card {
+  text-decoration: none;
+  background: white;
+  border-radius: 15px;
+  border: 2px solid #28a745;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  color: #333;
+  display: flex;
+  flex-direction: column;
+}
+
+.mini-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  border-color: #1e7e34;
+  cursor: pointer;
+  background-color: #f6fff7;
+}
+
+.mini-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #1e4620;
+}
+
+.mini-card p {
+  font-size: 0.95rem;
+  margin: 0.2rem 0;
+  color: #444;
+}

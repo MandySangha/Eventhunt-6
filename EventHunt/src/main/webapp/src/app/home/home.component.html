@@ -1,0 +1,19 @@
+<div class="homepage-container">
+  <div class="welcome-section">
+    <h1>Welcome To Event Hunt!</h1>
+    <p>Discover what’s happening near around you</p>
+  </div>
+
+  <div class="event-preview-section">
+    <h2>Upcoming Events</h2>
+
+    <div class="event-preview-grid">
+      <a class="mini-card" *ngFor="let event of events" [routerLink]="['/events']">
+      
+        <h3>{{ event.eventName }}</h3>
+        <p><strong>Date:</strong> {{ event.date | date:'MMM d, y' }}</p>
+        <p><strong>Location:</strong> {{ event.eventAddress?.city }}, {{ event.eventAddress?.province }}</p>
+      </a>
+    </div>
+  </div>
+</div>
